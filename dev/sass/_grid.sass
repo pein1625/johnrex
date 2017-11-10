@@ -1,0 +1,104 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body 
+    font-family: Helvetica, Arial, Open sans-serif     
+    font-size: 16px
+    color: #111
+    padding: 20px 0
+    background: url("http://iliketowastemytime.com/sites/default/files/night-walk-park-hd-wallpaper.jpg") center center no-repeat
+    background-attachment: fixed
+    background-size: cover
+
+.container
+    nav 
+        display: none
+    section, #home
+        width: 100%
+        background: #f5f5f5
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3)
+        border-top: 6px solid #111
+        margin-bottom: 20px
+        padding: 20px
+        h2:first-child
+            text-transform: uppercase
+            font-weight: bold
+            border-bottom: 2px solid #333
+            padding-bottom: 1rem
+            font-size: 1.5rem
+
+    @media(min-width: 992px)
+        position: relative
+        nav 
+            position: absolute
+            width: 15%
+            left: 15%
+            top: 5%
+            display: inline-block
+            max-width: 350px !important
+            margin-top: 6px
+            transition: left .5s 
+            a
+                background: $main-color
+                color: #fff
+                display: block
+                line-height: 36px 
+                padding: 0 12px
+                font-size: 12px
+                text-transform: uppercase
+                margin-bottom: 5px
+                margin-right: 10px
+                box-shadow: 0 2px 3px rgba(0,0,0,0.3)
+                position: relative
+                z-index: 2
+                transition: padding .2s ease-in-out
+                &.active
+                    background: $dark-blue !important
+                &::after 
+                    content: ''
+                    width: 0%
+                    height: 100%
+                    position: absolute
+                    top: 0 
+                    left: 0
+                    z-index: -1
+                    background: $dark-blue
+                    transition: width .2s ease-in-out
+                &:hover
+                    text-decoration: none
+                    padding-left: 25px
+                    &::after
+                        width: 100%    
+            &.active
+                left: 0        
+        section, #home
+            position: absolute
+            z-index: 1
+            top: 5%
+            left: 30%
+            width: calc(40% - 10px)
+            height: 90vh
+            overflow-y: auto
+            opacity: 0
+            transition: all .5s
+        section.active
+            left: 55%
+            opacity: 1
+            z-index: 2
+
+        #home
+            z-index: 3
+            padding-right: 10px
+            opacity: 1 !important
+            &.active
+                left: 15%
+        
+
+
+
+
+
+
+
